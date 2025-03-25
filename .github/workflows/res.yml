@@ -2,6 +2,10 @@ on:
   issues:
     types: [opened]
 
+permissions:
+  issues: write   # Ensures the token can write to issues
+  actions: write  # Sometimes external actions need action write permission
+
 jobs:
   comment:
     runs-on: ubuntu-latest
