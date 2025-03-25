@@ -1,4 +1,4 @@
-            - name: Issue Respond
+            - name: Issue Responder
   uses: TejasvOnly/random-rickroll@v1.0
   with:
     # How many people out of hundred should be rickrolled (set this to 100 if you want to rickroll everyone)
