@@ -1,0 +1,15 @@
+name: respond with rickroll on issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rickroll
+        uses: TejasvOnly/random-rickroll@v1.0
+        with:
+          percentage: 100
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
