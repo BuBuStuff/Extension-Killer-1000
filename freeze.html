@@ -197,7 +197,7 @@
       }
 
       function button_handler(extension) {
-        let cancel = !prompt("Freeze " + extension.name + "? \n\nAfter clicking OK, there will be a 3 second delay until the extension freezes. Switch to another tab immediately to prevent the device from freezing. like immediately. right now. don\'t wait. like click OK and switch to that tab. no, don\'t ask me why, just do it, or you can open an issue on the github page, but right now you\'re talking to a screen.", "echo \"chromebooks suck\" then run freezeProcess(\"" + extension.name + "\", type:chromium_browser_extension); on Error push AbortError;");
+        let cancel = !prompt("Freeze " + extension.name + "? \n\nAfter clicking OK, there will be a 3 second delay until the extension freezes. Switch to another tab immediately to prevent the device from freezing. like immediately. right now. don\'t wait. like click OK and switch to that tab. no, don\'t ask me why, just do it, or you can open an issue on the github page, but right now you\'re talking to a screen.\nDO NOT MODIFY THIS BOX", "echo \"chromebooks suck\" then run freezeProcess(\"" + extension.name + "\", type:chromium_browser_extension); on Error push AbortError;");
         if (cancel) {
 			prompt("Process cancelled.", "abortProcess(\"12649\");");
 			return;
