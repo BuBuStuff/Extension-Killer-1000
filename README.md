@@ -5,3 +5,5 @@ This software only works with Chrome or Chromium-based browsers with extension s
 
 ### Running
 If your administrator has banned File URIs, you can still run the software with Data URLs by pasting the contents of DataURL.txt in your browser's address bar like you would with any other URL. Unfortunately, if your administrator has blocked access to the Chrome extensions page (chrome://extensions), you will not be able to use this software.
+
+alright, don't be lazy, just run it, you don't even need to install a thing (but as a precaution, save your work first).
