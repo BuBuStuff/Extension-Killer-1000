@@ -1,4 +1,4 @@
-```You'll find most of the documentation when you run the software but here's some stuff you might need to know before using this.```
+You'll find most of the documentation when you run the software but here's some stuff you might want to know before using this software.
 
 ### Supported Browsers
 This software only works with Chrome or Chromium-based browsers with extension support (if you're looking to install this then your browser probably has it). This software works best on Windows or MacOS devices or iPads with device management software installed. This software may crash Chromebooks due to their insufficient processing power and the fact that the operating system is web based and crashing Chrome affects the entire device. This software will likely still work most of the time. If the device freezes completely, you may create an issue (https://github.com/BuBuStuff/Extension-Killer-1000/issues).
